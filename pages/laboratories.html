@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic Hospital Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body data-theme="cmyk" class="min-h-screen">
+    <div class="navbar bg-base-100">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl">Diabetic</a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1 gap-2">
+                <li class="bg-gray-50 rounded"><a href="../index.html">Home</a></li>
+                <li class="bg-gray-50 rounded"><a href="./hospitals.html">Hospitals</a></li>
+                <li class="bg-gray-50 rounded"><a href="./doctors.html">Doctors</a></li>
+                <li class="bg-gray-50 rounded"><a href="./pharmacies.html">Pharmacies</a></li>
+                <li class="bg-gray-50 rounded"><a href="./laboratories.html">Laboratories</a></li>
+                <li class="bg-gray-50 rounded"><a href="./patients.html">Patients</a></li>
+                <li class="bg-gray-50 rounded"><a href="./dietitians.html">Dietitians</a></li>
+                <li class="bg-gray-50 rounded"><a href="./healthparameters.html">Health Parameters</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="min-h-[80vh] flex gap-2">
+
+        <div class="drawer w-52 p-2 z-10">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content text-nowrap flex justify-center ">
+                <!-- Page content here -->
+                <label for="my-drawer" class="btn mt-5 drawer-button">Actions</label>
+            </div>
+            <div class="drawer-side ">
+                <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content justify-center ">
+                    <!-- Sidebar content here -->
+                    <li><button onclick="showAdd()" class="btn">Add</button></li>
+                    <li></li><button onclick="showDashboard()" class="btn">Dashboard</button></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="content w-full">
+            <div id="add-display" class="">
+                <div class="flex justify-center items-center p-5 bg-gray-100">
+                    <div class="card w-[500px] bg-white shadow-lg p-4">
+                        <h2 class="card-title text-center mb-4">Add Laboratory</h2>
+                        <form id="laboratoryForm" class="space-y-2">
+                            <div class="form-control flex items-center flex-row">
+                                <label class="label w-32" for="LaboratoryID">
+                                    <span class="label-text">Laboratory ID</span>
+                                </label>
+                                <input type="text" id="LaboratoryID" class="input input-bordered w-full"
+                                    placeholder="Enter Laboratory ID" required>
+                            </div>
+                            <div class="form-control flex items-center flex-row">
+                                <label class="label w-32" for="location">
+                                    <span class="label-text">Location</span>
+                                </label>
+                                <input type="text" id="location" class="input input-bordered w-full"
+                                    placeholder="Enter Location" required>
+                            </div>
+                            <div class="form-control flex items-center flex-row">
+                                <label class="label w-32" for="contactNumber">
+                                    <span class="label-text">Contact Number</span>
+                                </label>
+                                <input type="text" id="contactNumber" class="input input-bordered w-full"
+                                    placeholder="Enter Contact Number" required>
+                            </div>
+                            <div class="form-control flex items-center flex-row">
+                                <label class="label w-32" for="servicesOffered">
+                                    <span class="label-text">Services Offered</span>
+                                </label>
+                                <input type="text" id="servicesOffered" class="input input-bordered w-full"
+                                    placeholder="Enter Services Offered" required>
+                            </div>
+                            <div class="form-control mt-4">
+                                <button type="submit" class="btn w-full">Submit</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div id="dashboard-display" class="hidden">
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <!-- head -->
+                        <thead>
+                            <tr class="hover">
+                                <th></th>
+                                <th class="px-4 py-2">Laboratory ID</th>
+                                <th class="px-4 py-2">Location</th>
+                                <th class="px-4 py-2">Contact Number</th>
+                                <th class="px-4 py-2">Services Offered</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- row 1 -->
+                            <tr>
+                                <td>1</td>
+                                <td>lab1</td>
+                                <td>Building A</td>
+                                <td>123-456-7890</td>
+                                <td>Blood Tests</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>lab2</td>
+                                <td>Building B</td>
+                                <td>123-456-7891</td>
+                                <td>X-Ray</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>lab3</td>
+                                <td>Building C</td>
+                                <td>123-456-7892</td>
+                                <td>MRI</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>lab4</td>
+                                <td>Building D</td>
+                                <td>123-456-7893</td>
+                                <td>CT Scan</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>lab5</td>
+                                <td>Building E</td>
+                                <td>123-456-7894</td>
+                                <td>Ultrasound</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>lab6</td>
+                                <td>Building F</td>
+                                <td>123-456-7895</td>
+                                <td>Pathology</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>lab7</td>
+                                <td>Building G</td>
+                                <td>123-456-7896</td>
+                                <td>Microbiology</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>lab8</td>
+                                <td>Building H</td>
+                                <td>123-456-7897</td>
+                                <td>Hematology</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>lab9</td>
+                                <td>Building I</td>
+                                <td>123-456-7898</td>
+                                <td>Cytology</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>lab10</td>
+                                <td>Building J</td>
+                                <td>123-456-7899</td>
+                                <td>Biochemistry</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- action script -->
+    <script>
+        const showAdd = () => {
+            const addDisplay = document.getElementById("add-display");
+            const dashboardDisplay = document.getElementById("dashboard-display");
+
+            // Show the add-display and hide the dashboard-display
+            addDisplay.classList.remove("hidden");
+            dashboardDisplay.classList.add("hidden");
+        }
+
+        const showDashboard = () => {
+            const addDisplay = document.getElementById("add-display");
+            const dashboardDisplay = document.getElementById("dashboard-display");
+
+            // Show the dashboard-display and hide the add-display
+            dashboardDisplay.classList.remove("hidden");
+            addDisplay.classList.add("hidden");
+        }
+    </script>
+
+    <!-- add Entity script -->
+
+
+
+</body>
+
+</html>
